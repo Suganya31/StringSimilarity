@@ -1,0 +1,43 @@
+/*
+
+Questions:
+
+how to index trigrams
+
+
+
+
+		 * Ppjoin combines positional filtering with prefix filtering
+		 * 
+		 * 
+		 * y = [ A, B, C, D, E ] x = [ B, C, D, E, F ]
+		 * 
+		 * since they share a common token, B, in their prefixes, prefix filtering-based
+		 * methods will select y as a candidate
+		 * 
+		 * 
+		 * we can obtain an estimate of the maximum possible overlap as the sum of
+		 * current overlap amount and the minimum number of unseen tokens in x and y,
+		 * that is, 1 + min(3, 4) = 4.
+		 * 
+		 * Each element in the posting list is of the form postings list of w (i.e., Iw)
+		 * is of the form (rid, pos), indicating that the pos-th token in record rid’s
+		 * prefix is w
+		 * 
+		 * Ppjoin plus uses suffix filtering in addition
+		 * 
+		 * TOkenization needed:
+		 * 
+		 * word level character level trigram
+		 * 
+		 * Measures need to implemented:Overlap, cosine, jaccard, Trigram
+		 * 
+		 * algorithm steps:
+		 * 
+		 * 1. Prefix filtering 2. Positional Filtering 3. Suffix Filtering
+		 */
+		 /*
+		 * tokenize(); createIndex(); calculateJaccard(); calculateOverlap();
+		 * calculateCosine(); calculateTrigram(); prefixFiltering();
+		 * positionalFiltering(); suffixFiltering(); createIndex();
+		 */
