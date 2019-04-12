@@ -32,7 +32,7 @@ import org.aksw.commons.util.Pair;
 
 
 
-public class PPJoinPrefixFiltering {
+public class ppjoinprefixbk {
 	
 	static Map<String, Map<Integer,ArrayList<Integer>>> index = new HashMap<String, Map<Integer, ArrayList<Integer>>>();
 	static HashSet<Integer> doc = new HashSet<Integer>();
@@ -64,7 +64,6 @@ public class PPJoinPrefixFiltering {
 		
 		sortedTokens=sortTokens(tokens);
 		filteredTokens=prefixFilter(sortedTokens);	
-		System.out.println("inside the readfile"+filteredTokens);
 		
 		for (String sentence : finalCandidates) {
 			
@@ -89,7 +88,7 @@ public class PPJoinPrefixFiltering {
 		int overlap=0;
 //ArrayList<ArrayList<String>> sortedTokens = new ArrayList<ArrayList<String>>();
 ArrayList<ArrayList<String>> filteredTokens = new ArrayList<ArrayList<String>>();
-ArrayList<String> finalCandidates = new ArrayList<>();
+
 
 
 
@@ -129,16 +128,16 @@ ArrayList<String> finalCandidates = new ArrayList<>();
 System.out.println("outside for ************************************************");
 			 
 			 for ( Pair key : similarityMap.keySet() ) {
-				
-				 if(similarityMap.get(key)>=2)
+				 System.out.println(key);
+				 System.out.println(similarityMap.get(key));
+				 System.out.println("first");
+				 if(similarityMap.get(key)>3)
 				 { 				 System.out.println("second");
 
 
 				    System.out.println(" all the keys"+ key + "value is"+similarityMap.get(key));
 				    System.out.println("*******************");
-				   finalCandidates.add(key.toString());
-				   System.out.println("The size of the final candidates is"+ finalCandidates);
-
+				    
 				 }
 				}
 			 
@@ -190,6 +189,7 @@ System.out.println("outside for ************************************************
 		
 		
 		return sortedTokens;
+		// TODO Auto-generated method stub
 		
 	}
 
